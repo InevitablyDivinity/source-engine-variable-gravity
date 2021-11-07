@@ -1,0 +1,24 @@
+"GameInfo"
+{
+	"game"			"Source SDK: Variable Gravity"
+	"title"			"    "	// asw - leave this blank as we have a texture logo
+	"gamelogo"		"1"
+	"type"			"both"
+	"GameData"		"swarm.fgd"
+	"InstancePath" 	"instances"
+	"SupportsDX8"    0
+	
+	"FileSystem"
+	{
+		"SteamAppId"	"630"
+		"ToolsAppId"	"211"
+		
+		"SearchPaths"
+		{
+			"Game"	"|gameinfo_path|."
+			"Game"	"swarm"
+			"Game"	"swarm_base"
+			"Game"	"platform"
+		}
+	}
+}

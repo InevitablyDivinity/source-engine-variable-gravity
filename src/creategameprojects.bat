@@ -1,0 +1,1 @@
+devtools\bin\vpc.exe /horizon +game /mksln games.sln /2013

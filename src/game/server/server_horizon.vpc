@@ -1,0 +1,63 @@
+//-----------------------------------------------------------------------------
+//	SERVER_HORIZON.VPC
+//
+//	Project Script
+//-----------------------------------------------------------------------------
+$Macro SRCDIR		"..\.."
+$Macro GAMENAME 	"horizon"
+
+$Include "$SRCDIR\game\server\server_base.vpc"
+
+$Configuration
+{
+	$Compiler
+	{
+		$AdditionalIncludeDirectories	"$BASE;.\;.\hl2;.\horizon;$SRCDIR\game\shared;$SRCDIR\game\shared\hl2;$SRCDIR\game\shared\horizon"
+		$PreprocessorDefinitions		 "$BASE;GAMEUI_EMBEDDED;GAMEUI_EXPORTS;HORIZON;"
+	}
+}
+
+$Project "Server (Horizon)"
+{
+	$Folder	"Source Files"
+	{
+		$File	"$SRCDIR\game\shared\predicted_viewmodel.h"
+		$File	"$SRCDIR\game\shared\predicted_viewmodel.cpp"
+		
+		$Folder	"Horizon"
+		{
+			$File	"horizon\horizon_client.cpp"
+			$File	"horizon\horizon_gameinterface.cpp"
+			$File	"horizon\horizon_player.cpp"
+			$File	"horizon\horizon_player.h"
+			$File	"horizon\horizon_playermove.cpp"
+			$File	"horizon\weapon_gravity.cpp"
+			
+			$Folder	"HL2"
+			{
+				$File	"hl2\hl2_eventlog.cpp"
+			}
+			
+			$Folder	"Shared"
+			{
+				$File	"$SRCDIR\game\shared\horizon\gravity_shared.cpp"
+				$File	"$SRCDIR\game\shared\horizon\gravity_shared.h"
+				$File	"$SRCDIR\game\shared\horizon\horizon_gamerules.cpp"
+				$File	"$SRCDIR\game\shared\horizon\horizon_gamerules.h"
+				$File	"$SRCDIR\game\shared\horizon\horizon_movedata.h"
+				$File	"$SRCDIR\game\shared\horizon\horizon_playeranimstate.cpp"
+				$File	"$SRCDIR\game\shared\horizon\horizon_playeranimstate.h"
+				$File	"$SRCDIR\game\shared\horizon\horizon_player_shared.cpp"
+				$File	"$SRCDIR\game\shared\horizon\horizon_player_shared.h"
+				$File	"$SRCDIR\game\shared\horizon\horizon_shareddefs.cpp"
+				$File	"$SRCDIR\game\shared\horizon\horizon_shareddefs.h"
+				$File	"$SRCDIR\game\shared\horizon\horizon_usermessages.cpp"
+				$File	"$SRCDIR\game\shared\horizon\horizon_weapon_parse.cpp"
+				$File	"$SRCDIR\game\shared\horizon\horizon_weapon_parse.h"
+				$File	"$SRCDIR\game\shared\horizon\weapon_horizonbase.cpp"
+				$File	"$SRCDIR\game\shared\horizon\horizon_gamemovement.cpp"
+				$File	"$SRCDIR\game\shared\horizon\horizon_gamemovement.h"
+			}
+		}
+	}
+}

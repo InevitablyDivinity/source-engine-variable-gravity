@@ -1,0 +1,19 @@
+$Group "game"
+{
+	"client"
+	"server"
+}
+
+$Group "shaders"
+{
+	"shaderlib"
+	"game_shader_dx9"
+}
+
+$Group "everything"
+{
+	"client"
+	"server"
+	"shaderlib"
+	"game_shader_dx9"
+}

@@ -1,0 +1,20 @@
+$Project "client"
+{
+	"game\client\client_horizon.vpc"		[$HORIZON]
+}
+
+$Project "server"
+{
+	"game\server\server_horizon.vpc"		[$HORIZON]
+}
+
+
+$Project "shaderlib"
+{
+	"materialsystem\shaderlib\shaderlib.vpc"
+}
+
+$Project "game_shader_dx9"
+{
+	"materialsystem\stdshaders\game_shader_dx9_horizon.vpc" [$HORIZON]
+}

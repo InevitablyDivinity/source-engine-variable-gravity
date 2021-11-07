@@ -1,0 +1,352 @@
+//-----------------------------------------------------------------------------
+//	CLIENT_HORIZON.VPC
+//
+//	Project Script
+//-----------------------------------------------------------------------------
+$Macro SRCDIR		"..\.."
+$Macro GAMENAME 	"horizon"
+
+$Include "$SRCDIR\game\client\client_base.vpc"
+
+$Configuration
+{
+	$Compiler
+	{
+		$AdditionalIncludeDirectories	"$BASE;.\;.\hl2;.\horizon;$SRCDIR\game\shared;$SRCDIR\game\shared\hl2;$SRCDIR\game\shared\horizon;.\game_controls;.\horizon\gameui;.\horizon\vgui"
+		$PreprocessorDefinitions		 "$BASE;GAMEUI_EMBEDDED;GAMEUI_EXPORTS;HORIZON"
+	}
+}
+
+$Project "Client (Horizon)"
+{
+	$Folder	"Source Files"
+	{
+		-$File	"$SRCDIR\game\shared\weapon_parse_default.cpp"
+		-$File	"hud_chat.h"
+		$File	"$SRCDIR\game\shared\predicted_viewmodel.h"
+		$File	"$SRCDIR\game\shared\predicted_viewmodel.cpp"
+		
+		$Folder	"Horizon"
+		{
+			$File	"horizon\clientmode_horizon.cpp"
+			$File	"horizon\clientmode_horizon.h"
+			$File	"horizon\c_horizon_lesson.cpp"
+			$File	"horizon\c_horizon_player.cpp"
+			$File	"horizon\c_horizon_player.h"
+			$File	"horizon\horizon_input.cpp"
+			$File	"horizon\horizon_input.h"
+			$File	"horizon\horizon_prediction.cpp"
+			$File	"horizon\vgui_rootpanel_horizon.cpp"
+			
+			$Folder "GameUI - Embedded"
+			{
+				$Folder "Base GameUI"
+				{
+					$Folder "Headers"
+					{
+						$File	"horizon\gameui\backgroundmenubutton.h"
+						$File	"horizon\gameui\basepanel.h"
+						$File	"horizon\gameui\basesavegamedialog.h"
+						$File	"horizon\gameui\bitmapimagepanel.h"
+						$File	"horizon\gameui\cdkeyentrydialog.h"
+						$File	"horizon\gameui\commandcheckbutton.h"
+						$File	"horizon\gameui\contentcontroldialog.h"
+						$File	"horizon\gameui\createmultiplayergamebotpage.h"
+						$File	"horizon\gameui\createmultiplayergamedialog.h"
+						$File	"horizon\gameui\createmultiplayergamegameplaypage.h"
+						$File	"horizon\gameui\createmultiplayergameserverpage.h"
+						$File	"horizon\gameui\customtabexplanationdialog.h"
+						$File	"horizon\gameui\cvarnegatecheckbutton.h"
+						$File	"horizon\gameui\cvarslider.h"
+						$File	"horizon\gameui\cvartextentry.h"
+						$File	"horizon\gameui\cvartogglecheckbutton.h"
+						$File	"horizon\gameui\engineinterface.h"
+						$File	"horizon\gameui\gameconsole.h"
+						$File	"horizon\gameui\gameconsoledialog.h"
+						$File	"horizon\gameui\gameui_interface.h"
+						$File	"horizon\gameui\gameui_util.h"
+						$File	"horizon\gameui\keytogglecheckbutton.h"
+						$File	"horizon\gameui\labeledcommandcombobox.h"
+						$File	"horizon\gameui\loadingdialog.h"
+						$File	"horizon\gameui\loadingtippanel.h"
+						$File	"horizon\gameui\modinfo.h"
+						$File	"horizon\gameui\mousemessageforwardingpanel.h"
+						$File	"horizon\gameui\multiplayeradvanceddialog.h"
+						$File	"horizon\gameui\optionsdialog.h"
+						$File	"horizon\gameui\optionssubaudio.h"
+						$File	"horizon\gameui\optionssubdifficulty.h"
+						$File	"horizon\gameui\optionssubgame.h"
+						$File	"horizon\gameui\optionssubkeyboard.h"
+						$File	"horizon\gameui\optionssubmouse.h"
+						$File	"horizon\gameui\optionssubmultiplayer.h"
+						$File	"horizon\gameui\optionssubportal.h"
+						$File	"horizon\gameui\optionssubvideo.h"
+						$File	"horizon\gameui\optionssubvoice.h"
+						$File	"horizon\gameui\panellistpanel.h"
+						$File	"horizon\gameui\playerlistdialog.h"
+						$File	"horizon\gameui\rungameengine.h"
+						$File	"horizon\gameui\scriptobject.h"
+						$File	"horizon\gameui\sys_utils.h"
+						$File	"horizon\gameui\textentrybox.h"
+						$File	"horizon\gameui\urlbutton.h"
+						$File	"horizon\gameui\vcontrolslistpanel.h"
+						$File	"horizon\gameui\vguisystemmoduleloader.h"
+					}
+					$File	"horizon\gameui\backgroundmenubutton.cpp" \
+							 "horizon\gameui\basesavegamedialog.cpp" \
+							 "horizon\gameui\bitmapimagepanel.cpp" \
+							 "horizon\gameui\commandcheckbutton.cpp" \
+							 "horizon\gameui\contentcontroldialog.cpp" \
+							 "horizon\gameui\createmultiplayergamebotpage.cpp" \
+							 "horizon\gameui\createmultiplayergamedialog.cpp" \
+							 "horizon\gameui\createmultiplayergamegameplaypage.cpp" \
+							 "horizon\gameui\createmultiplayergameserverpage.cpp" \
+							 "horizon\gameui\customtabexplanationdialog.cpp" \
+							 "horizon\gameui\cvarnegatecheckbutton.cpp" \
+							 "horizon\gameui\cvarslider.cpp" \
+							 "horizon\gameui\cvartextentry.cpp" \
+							 "horizon\gameui\cvartogglecheckbutton.cpp" \
+							 "horizon\gameui\gameconsole.cpp" \
+							 "horizon\gameui\gameconsoledialog.cpp" \
+							 "horizon\gameui\gameui_interface.cpp" \
+							 "horizon\gameui\gameui_util.cpp" \
+							 "horizon\gameui\keytogglecheckbutton.cpp" \
+							 "horizon\gameui\labeledcommandcombobox.cpp" \
+							 "horizon\gameui\loadingdialog.cpp" \
+							 "horizon\gameui\loadingtippanel.cpp" \
+							 "horizon\gameui\logofile.cpp" \
+							 "horizon\gameui\modinfo.cpp" \
+							 "horizon\gameui\mousemessageforwardingpanel.cpp" \
+							 "horizon\gameui\multiplayeradvanceddialog.cpp" \
+							 "horizon\gameui\optionsdialog.cpp" \
+							 "horizon\gameui\optionssubaudio.cpp" \
+							 "horizon\gameui\optionssubdifficulty.cpp" \
+							 "horizon\gameui\optionssubgame.cpp" \
+							 "horizon\gameui\optionssubkeyboard.cpp" \
+							 "horizon\gameui\optionssubmouse.cpp" \
+							 "horizon\gameui\optionssubmultiplayer.cpp" \
+							 "horizon\gameui\optionssubportal.cpp" \
+							 "horizon\gameui\optionssubvideo.cpp" \
+							 "horizon\gameui\optionssubvoice.cpp" \
+							 "horizon\gameui\panellistpanel.cpp" \
+							 "horizon\gameui\playerlistdialog.cpp" \
+							 "horizon\gameui\rungameengine.cpp" \
+							 "horizon\gameui\scriptobject.cpp" \
+							 "horizon\gameui\sys_utils.cpp" \
+							 "horizon\gameui\textentrybox.cpp" \
+							 "horizon\gameui\urlbutton.cpp" \
+							 "horizon\gameui\vcontrolslistpanel.cpp" \
+							 "horizon\gameui\vguisystemmoduleloader.cpp"
+					{
+						$Configuration
+						{
+							$Compiler
+							{
+								$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+							}
+						}
+					}
+				}	
+						
+				$Folder "External Stuff"
+				{
+					$File	"$SRCDIR\common\language.cpp"
+					{
+						$Configuration
+						{
+							$Compiler
+							{
+								$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+							}
+						}
+					}
+				}
+						
+				$Folder "horizon GameUI"
+				{
+					$Folder "Headers"
+					{
+						$File	"horizon\gameui\horizon\basemodframe.h"
+						$File	"horizon\gameui\horizon\basemodpanel.h"
+						$File	"horizon\gameui\horizon\basemodui.h"
+						$File	"horizon\gameui\horizon\gamemodes.h"
+						$File	"horizon\gameui\horizon\uiavatarimage.h"
+						$File	"horizon\gameui\horizon\uigamedata.h"
+						$File	"horizon\gameui\horizon\vachievements.h"
+						$File	"horizon\gameui\horizon\vaddonassociation.h"
+						$File	"horizon\gameui\horizon\vaddons.h"
+						$File	"horizon\gameui\horizon\vattractscreen.h"
+						$File	"horizon\gameui\horizon\vaudio.h"
+						$File	"horizon\gameui\horizon\vaudiovideo.h"
+						$File	"horizon\gameui\horizon\vcloud.h"
+						$File	"horizon\gameui\horizon\vcontrolleroptions.h"
+						$File	"horizon\gameui\horizon\vcontrolleroptionsbuttons.h"
+						$File	"horizon\gameui\horizon\vcontrolleroptionssticks.h"
+						$File	"horizon\gameui\horizon\vcustomcampaigns.h"
+						$File	"horizon\gameui\horizon\vdownloadcampaign.h"
+						$File	"horizon\gameui\horizon\vdownloads.h"
+						$File	"horizon\gameui\horizon\vdropdownmenu.h"
+						$File	"horizon\gameui\horizon\vflyoutmenu.h"
+						$File	"horizon\gameui\horizon\vfooterpanel.h"
+						$File	"horizon\gameui\horizon\vfoundgames.h"
+						$File	"horizon\gameui\horizon\vfoundgroupgames.h"
+						$File	"horizon\gameui\horizon\vfoundpublicgames.h"
+						$File	"horizon\gameui\horizon\vgamelobby.h"
+						$File	"horizon\gameui\horizon\vgamelobbychat.h"
+						$File	"horizon\gameui\horizon\vgameoptions.h"
+						$File	"horizon\gameui\horizon\vgamesettings.h"
+						$File	"horizon\gameui\horizon\vgenericconfirmation.h"
+						$File	"horizon\gameui\horizon\vgenericpanellist.h"
+						$File	"horizon\gameui\horizon\vgenericwaitscreen.h"
+						$File	"horizon\gameui\horizon\vgetlegacydata.h"
+						$File	"horizon\gameui\horizon\vhybridbutton.h"
+						$File	"horizon\gameui\horizon\vingamechapterselect.h"
+						$File	"horizon\gameui\horizon\vingamedifficultyselect.h"
+						$File	"horizon\gameui\horizon\vingamekickplayerlist.h"
+						$File	"horizon\gameui\horizon\vingamemainmenu.h"
+						$File	"horizon\gameui\horizon\vkeyboard.h"
+						$File	"horizon\gameui\horizon\vkeyboardmouse.h"
+						$File	"horizon\gameui\horizon\vleaderboard.h"
+						$File	"horizon\gameui\horizon\vloadingprogress.h"
+						$File	"horizon\gameui\horizon\vmainmenu.h"
+						$File	"horizon\gameui\horizon\vmultiplayer.h"
+						$File	"horizon\gameui\horizon\voptions.h"
+						$File	"horizon\gameui\horizon\vpasswordentry.h"
+						$File	"horizon\gameui\horizon\vquickjoin.h"
+						$File	"horizon\gameui\horizon\vquickjoingroups.h"
+						$File	"horizon\gameui\horizon\vsignindialog.h"
+						$File	"horizon\gameui\horizon\vslidercontrol.h"
+						$File	"horizon\gameui\horizon\vspinnercontrol.h"
+						$File	"horizon\gameui\horizon\vsteamcloudconfirmation.h"
+						$File	"horizon\gameui\horizon\vtransitionscreen.h"
+						$File	"horizon\gameui\horizon\vvideo.h"
+						$File	"horizon\gameui\horizon\vvoteoptions.h"
+						}
+						$File	"horizon\gameui\horizon\basemodframe.cpp" \
+								 "horizon\gameui\horizon\basemodpanel.cpp" \
+								 "horizon\gameui\horizon\gamemodes.cpp" \
+								 "horizon\gameui\horizon\uiavatarimage.cpp" \
+								 "horizon\gameui\horizon\uigamedata.cpp" \
+								 "horizon\gameui\horizon\uigamedata_invite.cpp" \
+								 "horizon\gameui\horizon\uigamedata_storage.cpp" \
+								 "horizon\gameui\horizon\vachievements.cpp" \
+								 "horizon\gameui\horizon\vaddonassociation.cpp" \
+								 "horizon\gameui\horizon\vaddons.cpp" \
+								 "horizon\gameui\horizon\vattractscreen.cpp" \
+								 "horizon\gameui\horizon\vaudio.cpp" \
+								 "horizon\gameui\horizon\vaudiovideo.cpp" \
+								 "horizon\gameui\horizon\vcloud.cpp" \
+								 "horizon\gameui\horizon\vcontrolleroptions.cpp" \
+								 "horizon\gameui\horizon\vcontrolleroptionsbuttons.cpp" \
+								 "horizon\gameui\horizon\vcontrolleroptionssticks.cpp" \
+								 "horizon\gameui\horizon\vcustomcampaigns.cpp" \
+								 "horizon\gameui\horizon\vdownloadcampaign.cpp" \
+								 "horizon\gameui\horizon\vdownloads.cpp" \
+								 "horizon\gameui\horizon\vdropdownmenu.cpp" \
+								 "horizon\gameui\horizon\vflyoutmenu.cpp" \
+								 "horizon\gameui\horizon\vfooterpanel.cpp" \
+								 "horizon\gameui\horizon\vfoundgames.cpp" \
+								 "horizon\gameui\horizon\vfoundgroupgames.cpp" \
+								 "horizon\gameui\horizon\vfoundpublicgames.cpp" \
+								 "horizon\gameui\horizon\vgamelobby.cpp" \
+								 "horizon\gameui\horizon\vgamelobbychat.cpp" \
+								 "horizon\gameui\horizon\vgameoptions.cpp" \
+								 "horizon\gameui\horizon\vgamesettings.cpp" \
+								 "horizon\gameui\horizon\vgenericconfirmation.cpp" \
+								 "horizon\gameui\horizon\vgenericpanellist.cpp" \
+								 "horizon\gameui\horizon\vgenericwaitscreen.cpp" \
+								 "horizon\gameui\horizon\vgetlegacydata.cpp" \
+								 "horizon\gameui\horizon\vhybridbutton.cpp" \
+								 "horizon\gameui\horizon\vingamechapterselect.cpp" \
+								 "horizon\gameui\horizon\vingamedifficultyselect.cpp" \
+								 "horizon\gameui\horizon\vingamekickplayerlist.cpp" \
+								 "horizon\gameui\horizon\vingamemainmenu.cpp" \
+								 "horizon\gameui\horizon\vkeyboard.cpp" \
+								 "horizon\gameui\horizon\vkeyboardmouse.cpp" \
+								 "horizon\gameui\horizon\vleaderboard.cpp" \
+								 "horizon\gameui\horizon\vloadingprogress.cpp" \
+								 "horizon\gameui\horizon\vmainmenu.cpp" \
+								 "horizon\gameui\horizon\vmenubackground.cpp" \
+								 "horizon\gameui\horizon\vmultiplayer.cpp" \
+								 "horizon\gameui\horizon\voptions.cpp" \
+								 "horizon\gameui\horizon\vpasswordentry.cpp" \
+								 "horizon\gameui\horizon\vquickjoin.cpp" \
+								 "horizon\gameui\horizon\vquickjoingroups.cpp" \
+								 "horizon\gameui\horizon\vsignindialog.cpp" \
+								 "horizon\gameui\horizon\vslidercontrol.cpp" \
+								 "horizon\gameui\horizon\vspinnercontrol.cpp" \
+								 "horizon\gameui\horizon\vsteamcloudconfirmation.cpp" \
+								 "horizon\gameui\horizon\vtransitionscreen.cpp" \
+								 "horizon\gameui\horizon\vvideo.cpp" \
+								 "horizon\gameui\horizon\vvoteoptions.cpp"
+						{
+							$Configuration
+							{
+								$Compiler
+								{
+									$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+							}
+						}
+					}
+				}
+			}
+		
+				
+			$Folder "vgui"
+			{
+				$File	"horizon\vgui\nb_button.cpp"
+				$File	"horizon\vgui\nb_header_footer.cpp"
+				$File	"horizon\vgui\nb_horiz_list.cpp"
+				$File	"horizon\vgui\nb_select_level_entry.cpp"
+				$File	"horizon\vgui\nb_select_level_panel.cpp"
+				$File	"horizon\vgui\horizon_hud_ammo.cpp"
+				$File	"horizon\vgui\horizon_hud_chat.cpp"
+				$File	"horizon\vgui\horizon_hud_health.cpp"
+				$File	"horizon\vgui\horizon_hud_weaponselection.cpp"
+				$File	"horizon\vgui\horizon_loading_panel.cpp"
+				$File	"horizon\vgui\horizon_logo_panel.cpp"
+				
+				$Folder "Headers"
+				{
+					$File	"horizon\vgui\nb_button.h"
+					$File	"horizon\vgui\nb_header_footer.h"
+					$File	"horizon\vgui\nb_horiz_list.h"
+					$File	"horizon\vgui\nb_select_level_entry.h"
+					$File	"horizon\vgui\nb_select_level_panel.h"
+					$File	"horizon\vgui\horizon_hud_chat.h"
+					$File	"horizon\vgui\horizon_loading_panel.h"
+					$File	"horizon\vgui\horizon_logo_panel.h"
+				}
+			}
+				
+			$Folder	"Shared"
+			{
+				$File	"$SRCDIR\game\shared\horizon\gravity_shared.cpp"
+				$File	"$SRCDIR\game\shared\horizon\gravity_shared.h"
+				$File	"$SRCDIR\game\shared\horizon\horizon_gamerules.cpp"
+				$File	"$SRCDIR\game\shared\horizon\horizon_gamerules.h"
+				$File	"$SRCDIR\game\shared\horizon\horizon_movedata.h"
+				$File	"$SRCDIR\game\shared\horizon\horizon_playeranimstate.cpp"
+				$File	"$SRCDIR\game\shared\horizon\horizon_playeranimstate.h"
+				$File	"$SRCDIR\game\shared\horizon\horizon_player_shared.cpp"				
+				$File	"$SRCDIR\game\shared\horizon\horizon_player_shared.h"
+				$File	"$SRCDIR\game\shared\horizon\horizon_shareddefs.cpp"
+				$File	"$SRCDIR\game\shared\horizon\horizon_shareddefs.h"
+				$File	"$SRCDIR\game\shared\horizon\horizon_usermessages.cpp"
+				$File	"$SRCDIR\game\shared\horizon\horizon_weapon_parse.cpp"
+				$File	"$SRCDIR\game\shared\horizon\horizon_weapon_parse.h"
+				$File	"$SRCDIR\game\shared\horizon\weapon_horizonbase.cpp"
+				$File	"$SRCDIR\game\shared\horizon\weapon_horizonbase.h"
+				$File	"$SRCDIR\game\shared\horizon\horizon_gamemovement.cpp"
+				$File	"$SRCDIR\game\shared\horizon\horizon_gamemovement.h"
+			}
+			
+		}
+	}
+	
+	$Folder	"Link Libraries"
+	{
+		$Lib "$LIBCOMMON\jpeglib"
+		$Lib "$LIBPUBLIC\vpklib"
+	}
+}
