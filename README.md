@@ -7,3 +7,7 @@ jitter when walking on walls (possibly a prediction/interpolation issue). The pl
 rotated.
 
 If someone were to port this to Source 2013 in a similarly functional state I'd probably finish it.
+
+
+https://user-images.githubusercontent.com/71880558/207299541-e5137869-6993-426c-98ca-bc8274c46e5f.mp4
+
